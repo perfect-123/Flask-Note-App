@@ -1,7 +1,8 @@
 Welcome to Flask-Note_App, a simple and efficient note-taking application built using Flask.
-This app allows users to create an account, log in, and save their notes securely.
-**Features**
 
+This app allows users to create an account, log in, and save their notes securely.
+
+**Features**
 User Registration: Create a new account to start taking notes.
 
 User Authentication: Secure login and logout functionality.
@@ -9,17 +10,20 @@ User Authentication: Secure login and logout functionality.
 Note Creation: Easily create and save notes.
 Note Management: View, edit, and delete your notes.
 Responsive Design: Accessible from both desktop and mobile devices.
+
+
 Prerequisites
 Before you begin, ensure you have met the following requirements:
-
 Python 3.8 or higher installed on your machine.
 Flask and other dependencies listed in requirements.txt.
 Installation
 Follow these steps to set up the Flask-Note_App on your local machine:
 
+
 Clone the repository:
 git clone https://github.com/perfect-123/Flask-Note_App.git
 cd Flask-Note_App
+
 
 Create a virtual environment:
 python3 -m venv venv
