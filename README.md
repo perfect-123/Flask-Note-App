@@ -1,7 +1,6 @@
 Welcome to Flask-Note_App, a simple and efficient note-taking application built using Flask.
 This app allows users to create an account, log in, and save their notes securely.
-
-Features
+**Features**
 
 User Registration: Create a new account to start taking notes.
 
