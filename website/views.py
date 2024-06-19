@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import Note
+from .models import Note, Todo
 from . import db
 import json
 # We're storing the standard routes here. Everything the user can navigate to
@@ -31,5 +31,35 @@ def delete_note():
     if note:
         if note.user_id == current_user.id:
             db.session.delete(note)
+            db.session.commit()
+    return jsonify({})
+
+
+@views.route('/todo', methods=['GET', 'POST'])
+@login_required
+def todo():
+    if request.method == 'POST':
+        todo = request.form.get('todo')
+        print(f"Received todo: {todo}")
+
+        if len(todo) < 1:
+            flash("Don't be rediculus! that is not a Todo Item", category='error')
+        else:
+            new_todo = Todo(data=todo, user_id=current_user.id)
+            db.session.add(new_todo)
+            db.session.commit()
+            flash('Todo added!', category='success')
+            print(f"Saved todo {todo} and {todo}   ")
+    return render_template("todo.html", user=current_user )
+
+
+@views.route('/delete-todo', methods = ['POST'])
+def delete_todo():
+    todo = json.loads(request.data)
+    todoId = todo['todoId']
+    todo = Todo.query.get(todoId)
+    if todo:
+        if todo.user_id == current_user.id:
+            db.session.delete(todo)
             db.session.commit()
     return jsonify({})

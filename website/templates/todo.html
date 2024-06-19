@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Todo{% endblock %}{% block content%}
-<h1 align="center">Todo</h1>
-{% endblock %}
+<h1 align="center">My Todo List</h1>
+<ul class="list-group list-group-flush" id="todo">
+    {% for todo in user.todos%}
+<li class="list-group-item">
+    <strike>{{todo.data}}</strike>
+    <button type="button" class="close" onclick="deleteTodo({{todo.id}})">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</li>
+{% endfor %}
+</ul>
 
+
+<form method="POST">
+    <textarea name="todo" id="todo" class="form-control"></textarea>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Todo</button>
+    </div>
+</form>
+
+{% endblock %}
