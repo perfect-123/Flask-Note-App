@@ -1,23 +1,37 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}{% block content%}
-<h1 align="center">Note</h1>
-<ul class="list-group list-group-flush" id="notes">
-    {% for note in user.notes %}
-<li class="list-group-item">{{note.data}}
-    <button type="button" class="close" onclick="deleteNote({{note.id}})">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    </li>
-    {% endfor %}
-</ul>
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1 class="text-center">Notes</h1>
 
-
-<form method="POST">
-    <textarea name="note" id="note" class="form-control"></textarea>
-    <div align="center">
-        <button type="submit" class="btn btn-primary">Add Note</button>
+<div class="container">
+    <div class="row">
+        {% for note in user.notes %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{{ url_for('views.detail', id=note.id) }}" class="stretched-link"></a>
+                        Note {{ note.id }}
+                    </h5>
+                    <p class="card-text">{{ note.data[:100] }}{% if note.data|length > 100 %}...{% endif %}</p>
+                    <button type="button" class="close" onclick="deleteNote({{ note.id }})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-</form>
+</div>
 
+<div class="container mt-4">
+    <form method="POST">
+        <div class="form-group">
+            <textarea name="note" id="note" class="form-control" placeholder="Write your note here..."></textarea>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-2">Add Note</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
-
