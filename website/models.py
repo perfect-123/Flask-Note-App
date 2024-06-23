@@ -17,5 +17,13 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     first_name = db.Column(db.String(150))
     notes = db.relationship('Note')
-
+    todos = db.relationship('Todo')
+ 
     # we've set up the database,but now we have to create it -> init file
+
+class Todo(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.String(200))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
