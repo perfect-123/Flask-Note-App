@@ -27,6 +27,7 @@ def login():
     return render_template("login.html", user=current_user)
 
 
+
 @auth.route('/logout')
 @login_required # Make it so that you can only logout if you're currently login
 def logout():
