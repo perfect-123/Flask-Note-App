@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Note Detail{% endblock %}
+{% block title %}Edit Note{% endblock %}
 
 {% block content %}
-<h1>{{ note.data }}</h1>
-<p>Created on: {{ note.date.strftime('%Y-%m-%d') }}</p>
+<div class="container mt-5">
+    <form method="POST">
+        <div class="form-group">
+            <input type="text" name="title" id="title" class="form-control" value="{{ note.title }}">
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="note">Note</label>
+            <textarea name="note" id="note" class="form-control" rows="10">{{ note.data }}</textarea>
+        </div>
+        <div class="text-center mt-4">
+            <input type="submit" value="Save" class="btn btn-primary">
+            <a href="{{ url_for('views.home') }}" class="btn btn-secondary ml-2">Back to Home</a>
+        </div>
+    </form>
+</div>
 {% endblock %}
+
