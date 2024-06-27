@@ -10,7 +10,7 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 - **Real-time Feedback:** Flash messages for user actions.
 - **Hover Actions:** Show delete button on hover for easy management of notes.
 
-# Currently working on adding a markdown capability. Help anyway you can!
+# - Currently working on adding a markdown capability. Help anyway you can!
 
 ## Screenshots
 
