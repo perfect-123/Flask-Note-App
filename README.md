@@ -30,3 +30,24 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
    ```bash
    git clone https://github.com/yourusername/notes-todo-app.git
    cd notes-todo-app
+
+
+Usage
+Home Page: View your notes and to-do items.
+Add Note: Click on "Add New Note" to create a new note.
+Edit Note: Click on an existing note to edit it.
+Delete Note: Hover over a note and click the delete button to remove it.
+To-Do List: Manage your to-do items in a similar manner.
+Technologies Used
+Languages: Python, HTML, CSS, JavaScript
+Frameworks: Flask, Bootstrap
+Database: SQLite, SQLAlchemy
+Tools: Flask-Login, Jinja2, Git
+Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
+
+License
+This project is licensed under the MIT License.
+
+Contact
+For any questions or suggestions, please contact me at perfect.ackah1@gmail.com.
