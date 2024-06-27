@@ -10,20 +10,23 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 - **Real-time Feedback:** Flash messages for user actions.
 - **Hover Actions:** Show delete button on hover for easy management of notes.
 
+# Currently working on adding a markdown capability. Help anyway you can!
+
 ## Screenshots
 
 ### Home Page
 ![Home Page](path/to/home_page.png)
-
+Screen Recording 2024-06-27 at 12.47.21 AM
 ### Add New Note
 ![Add New Note](path/to/add_new_note.png)
 
 ### Edit Note<img width="1800" alt="Screenshot 2024-06-26 at 12 36 32 PM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/f4cf7185-cc1e-43f5-8da2-4f41b2316ff2">
 
-![Edit Note](path/to/edit_note.png)
 
-### Delete Note
-![Delete Note](path/to/delete_note.png)
+Uploading Screen Recording 2024-06-27 at 12.47.21 AM.mov…
+
+
+![Edit Note](path/to/edit_note.png)
 
 ## Installation
 
