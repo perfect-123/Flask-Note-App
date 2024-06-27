@@ -21,16 +21,21 @@ Screen Recording 2024-06-27 at 12.47.21 AM
 ![Add New Note](path/to/add_new_note.png)
 
 ### Edit Note<img width="1800" alt="Screenshot 2024-06-26 at 12 36 32 PM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/f4cf7185-cc1e-43f5-8da2-4f41b2316ff2">
+<img width="900" alt="Screenshot 2024-06-27 at 12 53 27 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/c1d4f704-5d5b-45dc-8c27-e73a42465c94">
 
+<img width="900" alt="Screenshot 2024-06-27 at 12 53 27 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/5a77908b-d3b7-493e-94a0-281013b702ae">
+<img width="1794" alt="Screenshot 2024-06-27 at 12 53 15 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/60cf5cd1-cb87-4d0b-909b-1b6c8b18ca0f">
 
-Uploading Screen Recording 2024-06-27 at 12.47.21 AM.mov…
-
+<img width="1785" alt="Screenshot 2024-06-27 at 12 48 31 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/609005e9-3444-494a-ab9a-f7a4544ac94a">
+<img width="1800" alt="Screenshot 2024-06-27 at 12 27 46 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/d7378a93-9380-42d4-93a9-0e893fa8c713">
 
 ![Edit Note](path/to/edit_note.png)
 
+
 ## Installation
 
-1. **Clone the repository:**
+1. **Clone the repository:**![Uploading Screenshot 2024-06-27 at 12.53.15 AM.png…]()
+
 ```bash
 git clone https://github.com/yourusername/notes-todo-app.git
 cd notes-todo-app
