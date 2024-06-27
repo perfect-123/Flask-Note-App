@@ -30,9 +30,26 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
    ```bash
    git clone https://github.com/yourusername/notes-todo-app.git
    cd notes-todo-app
-
-
-Usage
+**Create a virtual environment:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+**Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+**Set up the database:**
+```bash
+flask db init
+flask db migrate
+flask db upgrade
+```
+**Run the application**
+```bash
+flask run
+```
+## Usage
 - Home Page: View your notes and to-do items.
 - Add Note: Click on "Add New Note" to create a new note.
 - Edit Note: Click on an existing note to edit it.
@@ -43,7 +60,8 @@ Usage
 - Frameworks: Flask, Bootstrap
 - Database: SQLite, SQLAlchemy
 - Tools: Flask-Login, Jinja2, Git
-- Contributing
+
+## Contributing
 - Contributions are welcome! Please feel free to submit a pull request or open an issue.
 
 ## License
