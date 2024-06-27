@@ -14,8 +14,10 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 
 ## Screenshots
 
-### Home Page
+### Login
 <img width="1796" alt="Screenshot 2024-06-27 at 12 56 16 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/da9e184d-d646-460f-b3e1-5ed566c98195">
+
+### Home Page
 <img width="1794" alt="Screenshot 2024-06-27 at 12 53 15 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/60cf5cd1-cb87-4d0b-909b-1b6c8b18ca0f">
 ### Add New Note
 
