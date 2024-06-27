@@ -27,9 +27,10 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 ## Installation
 
 1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/notes-todo-app.git
-   cd notes-todo-app
+```bash
+git clone https://github.com/yourusername/notes-todo-app.git
+cd notes-todo-app
+```
 **Create a virtual environment:**
 ```bash
 python3 -m venv venv
