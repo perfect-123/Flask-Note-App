@@ -15,17 +15,16 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 ## Screenshots
 
 ### Home Page
-![Home Page](path/to/home_page.png)
-Screen Recording 2024-06-27 at 12.47.21 AM
-### Add New Note
-![Add New Note](path/to/add_new_note.png)
-
-### Edit Note<img width="1800" alt="Screenshot 2024-06-26 at 12 36 32 PM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/f4cf7185-cc1e-43f5-8da2-4f41b2316ff2">
-
-<img width="900" alt="Screenshot 2024-06-27 at 12 53 27 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/5a77908b-d3b7-493e-94a0-281013b702ae">
-<img width="1794" alt="Screenshot 2024-06-27 at 12 53 15 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/60cf5cd1-cb87-4d0b-909b-1b6c8b18ca0f">
-
 <img width="1796" alt="Screenshot 2024-06-27 at 12 56 16 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/da9e184d-d646-460f-b3e1-5ed566c98195">
+<img width="1794" alt="Screenshot 2024-06-27 at 12 53 15 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/60cf5cd1-cb87-4d0b-909b-1b6c8b18ca0f">
+### Add New Note
+
+### Edit Note
+<img width="900" alt="Screenshot 2024-06-27 at 12 53 27 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/5a77908b-d3b7-493e-94a0-281013b702ae">
+
+### Todo
+<img width="1792" alt="Screenshot 2024-06-27 at 12 58 18 AM" src="https://github.com/perfect-123/Flask-Note-App/assets/57051815/391e2ab0-19c1-4d89-87fa-e963a762f0c9">
+
 
 
 ![Edit Note](path/to/edit_note.png)
