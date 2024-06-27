@@ -29,8 +29,6 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 
 
 
-![Edit Note](path/to/edit_note.png)
-
 
 ## Installation
 
