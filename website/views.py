@@ -47,17 +47,20 @@ def note_form(id=None):
         if request.method == "POST":
             title = request.form.get('title')
             note_data = request.form.get('note')
-
-            if len(note_data) < 1:
-                flash('Note is too short!', category='error')
-            else:
-                new_note = Note(title=title, data=note_data, user_id=current_user.id)
-                db.session.add(new_note)
-                db.session.commit()
-                flash('Note added!', category='success')
-                return redirect(url_for('views.home'))
+            new_note = Note(title=title, data=note_data, user_id=current_user.id)
+            db.session.add(new_note)
+            db.session.commit()
+            flash('Note added!', category='success')
+            return redirect(url_for('views.home'))
 
     return render_template('note_form.html', note=note, user=current_user)
+
+
+@views.route('settings/<string:page>', methods = ['POST', 'GET'])
+@login_required
+def settings(page):
+    pass
+
 
 @views.route('/delete-note', methods=['POST'])
 @login_required
@@ -70,6 +73,16 @@ def delete_note():
             db.session.delete(note)
             db.session.commit()
     return jsonify({})
+
+
+
+
+
+
+
+
+
+
 
 @views.route('/todo', methods=['GET', 'POST'])
 @login_required
