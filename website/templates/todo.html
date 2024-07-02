@@ -4,10 +4,16 @@
 <ul class="list-group list-group-flush" id="todo">
     {% for todo in user.todos%}
 <li class="list-group-item">
-    <strike>{{todo.data}}</strike>
-    <button type="button" class="close" onclick="deleteTodo({{todo.id}})">
-        <span aria-hidden="true">&times;</span>
-    </button>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          {{todo.data}}
+        </label>
+        <button type="button" class="close" onclick="deleteTodo({{todo.id}})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
 </li>
 {% endfor %}
 </ul>

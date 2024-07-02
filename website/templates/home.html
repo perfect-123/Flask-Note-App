@@ -1,37 +1,39 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h1 class="text-center">Notes</h1>
-
-<div class="container">
-    <div class="row">
-        {% for note in user.notes %}
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="{{ url_for('views.detail', id=note.id) }}" class="stretched-link"></a>
-                        Note {{ note.id }}
-                    </h5>
-                    <p class="card-text">{{ note.data[:100] }}{% if note.data|length > 100 %}...{% endif %}</p>
-                    <button type="button" class="close" onclick="deleteNote({{ note.id }})">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+<h1 class="text-center mb-4" id="greeting" data-username="{{user.first_name}}">Welcome, {{user.first_name}}</h1>
+<br>
+<hr>
+<div class="row">
+    <!-- Add Note Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body d-flex align-items-center justify-content-center">
+                <a href="{{ url_for('views.note_form') }}" class="stretched-link text-center">
+                    <h5 class="card-title"> + Add New Note</h5>
+                </a>
             </div>
         </div>
-        {% endfor %}
     </div>
-</div>
 
-<div class="container mt-4">
-    <form method="POST">
-        <div class="form-group">
-            <textarea name="note" id="note" class="form-control" placeholder="Write your note here..."></textarea>
+    <!-- Notes Cards -->
+    {% for note in notes %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <div class="card-content-wrapper position-relative">
+                    <h5 class="card-title">
+                        {{ note.title or 'Untitled Note' }}
+                    </h5>
+                    <p class="card-text">{{ note.data[:100] if note.data else '' }}{% if note.data and note.data|length > 100 %}...{% endif %}</p>
+                    <a href="{{ url_for('views.note_form', id=note.id) }}" class="stretched-link"></a>
+                </div>
+                <button type="button" class="delete-btn" onclick="deleteNote({{ note.id }})">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
         </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-2">Add Note</button>
-        </div>
-    </form>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
