@@ -32,7 +32,6 @@ Welcome to the Personal Notes and To-Do List Application! This project is a full
 
 ## Installation
 **look at the requiremenents file**
-1. **Clone the repository:**![Uploading Screenshot 2024-06-27 at 12.53.15 AM.png…]()
 
 
 ## Usage
