@@ -11,8 +11,21 @@
                     <div class="form-group">
                         <input type="text" name="title" id="title" class="form-control form-control-lg" placeholder="Untitled Document" value="{{ note.title if note else '' }}">
                     </div>
-                    <div class="form-group">
-                        <textarea name="note" id="note" class="form-control" rows="20" placeholder="Start typing your note here...">{{ note.data if note else '' }}</textarea>
+                    <ul class="nav nav-tabs" id="noteTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="edit-tab" data-toggle="tab" href="#edit" role="tab" aria-controls="edit" aria-selected="true">Edit</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview" role="tab" aria-controls="preview" aria-selected="false">Preview</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="noteTabsContent">
+                        <div class="tab-pane fade show active" id="edit" role="tabpanel" aria-labelledby="edit-tab">
+                            <textarea name="note" id="note" class="form-control mt-3" rows="15" placeholder="Start typing your note here (Markdown supported)...">{{ note.data if note else '' }}</textarea>
+                        </div>
+                        <div class="tab-pane fade" id="preview" role="tabpanel" aria-labelledby="preview-tab">
+                            <div id="preview-content" class="mt-3"></div>
+                        </div>
                     </div>
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-primary btn-lg">Save</button>
@@ -22,4 +35,19 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.3/marked.min.js"></script>
+<script>
+    const noteArea = document.getElementById('note');
+    const previewArea = document.getElementById('preview-content');
+    const previewTab = document.getElementById('preview-tab');
+
+    function updatePreview() {
+        previewArea.innerHTML = marked(noteArea.value);
+    }
+
+    noteArea.addEventListener('input', updatePreview);
+    previewTab.addEventListener('shown.bs.tab', updatePreview);
+    updatePreview();  // Initial preview
+</script>
 {% endblock %}
