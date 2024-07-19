@@ -1,8 +1,10 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
+from markupsafe import Markup
 from flask_login import login_required, current_user
 from .models import Note, Todo
 from . import db
 import json
+import markdown
 
 views = Blueprint('views', __name__)
 
@@ -22,7 +24,13 @@ def home():
     
     # Fetch notes sorted by date in descending order
     notes = Note.query.filter_by(user_id=current_user.id).order_by(Note.date.desc()).all()
+    
+    # Convert Markdown to HTML for each note
+    for note in notes:
+        note.html_content = Markup(markdown.markdown(note.data))
+    
     return render_template("home.html", user=current_user, notes=notes)
+
 
 @views.route('/note', methods=['GET', 'POST'])
 @views.route('/note/<int:id>', methods=['GET', 'POST'])
@@ -42,6 +50,9 @@ def note_form(id=None):
                 db.session.commit()
                 flash('Note updated!', category='success')
                 return redirect(url_for('views.home'))
+        
+        note.html_content = Markup(markdown.markdown(note.data))
+
     else:
         note = None
         if request.method == "POST":
@@ -54,6 +65,7 @@ def note_form(id=None):
             return redirect(url_for('views.home'))
 
     return render_template('note_form.html', note=note, user=current_user)
+
 
 
 @views.route('settings/<string:page>', methods = ['POST', 'GET'])
@@ -73,12 +85,6 @@ def delete_note():
             db.session.delete(note)
             db.session.commit()
     return jsonify({})
-
-
-
-
-
-
 
 
 

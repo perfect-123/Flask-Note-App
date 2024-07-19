@@ -25,7 +25,7 @@
                     <h5 class="card-title">
                         {{ note.title or 'Untitled Note' }}
                     </h5>
-                    <p class="card-text">{{ note.data[:100] if note.data else '' }}{% if note.data and note.data|length > 100 %}...{% endif %}</p>
+                    <div class="card-text">{{ note.html_content[:300] if note.html_content else '' }}{% if note.html_content and note.html_content|length > 200 %}...{% endif %}</div>
                     <a href="{{ url_for('views.note_form', id=note.id) }}" class="stretched-link"></a>
                 </div>
                 <button type="button" class="delete-btn" onclick="deleteNote({{ note.id }})">
@@ -36,4 +36,5 @@
     </div>
     {% endfor %}
 </div>
+
 {% endblock %}
